@@ -57,12 +57,14 @@ sysinfo.txt
 
 # 3D Materials
 *.tif
+*.exr
 
 # Builds
 *.apk
 *.aab
 *.unitypackage
 *.app
+
 
 # Crashlytics generated file
 crashlytics-build.properties
