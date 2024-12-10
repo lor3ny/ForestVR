@@ -8,6 +8,7 @@ TagManager:
   - TrashElectronics
   - TrashPaper
   - Food
+  - Fire
   layers:
   - Default
   - TransparentFX
