@@ -44,6 +44,13 @@ public class EventManager : MonoBehaviour
         SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(sceneToUnload);
         RenderSettings.skybox = loadSkybox;
+        if (loadState == SystemManager.STATE.FIRE)
+        {
+            RenderSettings.fog = true;
+        } else
+        {
+            RenderSettings.fog = false;
+        }
 
         counterTrigger.SetActive(true);
 

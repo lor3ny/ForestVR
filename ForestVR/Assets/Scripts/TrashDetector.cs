@@ -34,7 +34,7 @@ public class TrashDetector : MonoBehaviour
 
         if (isPlastic)
         {
-            if (other.CompareTag("TrashElctronics"))
+            if (other.CompareTag("TrashElectronics"))
             {
                 Destroy(other.gameObject);
                 Debug.Log("Trash electronic captured");
