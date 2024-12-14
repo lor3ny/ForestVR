@@ -9,6 +9,8 @@ TagManager:
   - TrashPaper
   - Food
   - Fire
+  - Bucket
+  - Lake
   layers:
   - Default
   - TransparentFX
