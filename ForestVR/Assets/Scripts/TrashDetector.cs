@@ -10,6 +10,15 @@ public class TrashDetector : MonoBehaviour
     public bool isElectronic;
 
 
+    public AudioClip trash;
+    private AudioSource trashSource;
+
+    private void Start()
+    {
+        trashSource = GetComponent<AudioSource>();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -19,6 +28,7 @@ public class TrashDetector : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Debug.Log("Trash plastic captured");
+                trashSource.PlayOneShot(trash);
             }
         }
 
@@ -28,6 +38,7 @@ public class TrashDetector : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Debug.Log("Trash paper captured");
+                trashSource.PlayOneShot(trash);
             }
         }
 
@@ -38,6 +49,7 @@ public class TrashDetector : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Debug.Log("Trash electronic captured");
+                trashSource.PlayOneShot(trash);
             }
         }
     }
