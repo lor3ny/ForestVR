@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - Bucket
   - Lake
+  - Water
   layers:
   - Default
   - TransparentFX
