@@ -13,8 +13,11 @@ public class BucketFill : MonoBehaviour
     private bool isNearFire = false;  // Check if the bucket is near a fire
     private bool isWaterFillingInProgress = false;  // Prevent rapid water filling
 
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Ensure waterChild starts inactive
         if (waterChild != null)
         {
@@ -35,6 +38,7 @@ public class BucketFill : MonoBehaviour
                 waterChild.SetActive(true);  // Show the water when near the river and button pressed
                 isWaterFilled = true;  // Mark the bucket as filled with water
                 Debug.Log("Bucket filled with water.");
+                PlaySound();
             }
         }
 
@@ -67,6 +71,7 @@ public class BucketFill : MonoBehaviour
             // Disable or destroy fire to simulate extinguishing it
             fire.SetActive(false);  // You can also use Destroy(fire) if you want to completely remove it
             Debug.Log("Fire extinguished.");
+            PlaySound();
     }
 
     // Method to remove the water from the bucket
@@ -118,4 +123,13 @@ public class BucketFill : MonoBehaviour
             Debug.Log("Bucket left the fire zone.");
         }
     }
+
+    public void PlaySound()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+    }
+
 }
